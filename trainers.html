@@ -6,25 +6,149 @@
     <title>Harakat - Professional Trenerlar</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Sahifa va Kartochkalar uchun Animatsiyalar */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(99, 91, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(99, 91, 255, 0); }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
         .trainer-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 30px 25px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 0.6s ease forwards;
         }
+
+        .trainer-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 22px 45px rgba(99, 91, 255, 0.15);
+            border-color: #635BFF;
+        }
+
+        /* Murabbiy Rasmining Animatsiyasi */
         .trainer-img-box {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 18px auto;
             border: 4px solid #EEF0FF;
-            box-shadow: 0 8px 20px rgba(99, 91, 255, 0.15);
+            box-shadow: 0 8px 25px rgba(99, 91, 255, 0.18);
+            transition: all 0.4s ease;
+            position: relative;
         }
+
+        .trainer-card:hover .trainer-img-box {
+            transform: scale(1.1) rotate(2deg);
+            border-color: #635BFF;
+            animation: pulseGlow 1.5s infinite;
+        }
+
         .trainer-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .trainer-card:hover .trainer-img-box img {
+            transform: scale(1.15);
+        }
+
+        /* Reyting va Ma'lumot Bo'limi */
+        .rating {
+            color: #FFC837;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .trainer-stats {
+            background: #F8FAFC;
+            border-radius: 16px;
+            padding: 12px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            font-size: 13px;
+            color: #4A5568;
+            border: 1px dashed #CBD5E0;
+        }
+
+        .trainer-stats div strong {
+            display: block;
+            color: #0A1128;
+            font-size: 15px;
+        }
+
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .spec-tag {
+            background: #EEF0FF;
+            color: #635BFF;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        /* Interaktiv Tugma Animatsiyasi */
+        .btn-connect {
+            width: 100%;
+            background: #FFC837;
+            color: #0A1128;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 0;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 200, 55, 0.3);
+        }
+
+        .btn-connect:hover {
+            background: #635BFF;
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(99, 91, 255, 0.4);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -41,9 +165,9 @@
     </header>
 
     <main>
-        <div class="section-title">
-            <h1>Bizning professional murabbiylarimiz</h1>
-            <p>O'z ishining yetakchi ustalari sizga to'g'ri yo'nalish ko'rsatishadi va maqsadingizga erishishingizga ko'maklashishadi.</p>
+        <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+            <h1>Bizning Professional Murabbiylarimiz</h1>
+            <p>Xalqaro sertifikatga ega, tajribali va o'z ishining ustalari bo'lgan 12 nafar eng kuchli murabbiylar jamoasi.</p>
         </div>
 
         <div class="grid">
@@ -51,156 +175,300 @@
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Aziza Karimova">
                     </div>
-                    <span class="badge">10 yil tajriba</span>
+                    <div class="rating">★ 4.9 <span>(120+ shogirdlar)</span></div>
                     <h2>Aziza Karimova</h2>
-                    <p>Professional yugurish, marafon va chidamlilik bo'yicha xalqaro darajadagi murabbiy.</p>
+                    <span class="badge">10 yil tajriba</span>
+                    <p>Professional yugurish, marafon va chidamlilikni oshirish bo'yicha xalqaro master murabbiy.</p>
+                    
+                    <div class="specialties">
+                        <span class="spec-tag">Marafon</span>
+                        <span class="spec-tag">Kardiyo</span>
+                        <span class="spec-tag">Nafas texnikasi</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>450+</strong> Mashg'ulot</div>
+                        <div><strong>99%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Aziza Karimova bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Aziza Karimova bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 2 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Jasur Rahimov">
                     </div>
-                    <span class="badge">8 yil tajriba</span>
+                    <div class="rating">★ 5.0 <span>(200+ shogirdlar)</span></div>
                     <h2>Jasur Rahimov</h2>
-                    <p>Fitness, og'ir atletika va tana massasini to'g'ri shakllantirish mutaxassisi.</p>
+                    <span class="badge">8 yil tajriba</span>
+                    <p>Fitness, mushaklar massasini oshirish va tana tuzilishini to'g'ri shakllantirish bo'yicha ekspert.</p>
+                    
+                    <div class="specialties">
+                        <span class="spec-tag">Bodybuilding</span>
+                        <span class="spec-tag">Relief</span>
+                        <span class="spec-tag">Proteyn ratsioni</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>600+</strong> Mashg'ulot</div>
+                        <div><strong>98%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Jasur Rahimov bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Jasur Rahimov bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 3 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Malika Saidova">
                     </div>
-                    <span class="badge">6 yil tajriba</span>
+                    <div class="rating">★ 4.8 <span>(150+ shogirdlar)</span></div>
                     <h2>Malika Saidova</h2>
-                    <p>Yoga, strechting va ruhiy xotirjamlik hamda moslashuvchanlik bo'yicha ekspert.</p>
+                    <span class="badge">6 yil tajriba</span>
+                    <p>Yoga, strechting, egiluvchanlik va ruhiy xotirjamlikni tiklash bo'yicha sertifikatlangan ustoz.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Hatha Yoga</span>
+                        <span class="spec-tag">Stretching</span>
+                        <span class="spec-tag">Meditatsiya</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>380+</strong> Mashg'ulot</div>
+                        <div><strong>100%</strong> Tinchlik</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Malika Saidova bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Malika Saidova bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 4 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Timur Usmanov">
                     </div>
-                    <span class="badge">9 yil tajriba</span>
+                    <div class="rating">★ 4.9 <span>(90+ shogirdlar)</span></div>
                     <h2>Timur Usmanov</h2>
-                    <p>Professional suzish bo'yicha murabbiy, suv ostida nafasni boshqarish bo'yicha ustoz.</p>
+                    <span class="badge">9 yil tajriba</span>
+                    <p>Professional suzish bo'yicha murabbiy, suv ostida nafasni boshqarish va tezlik ustasi.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Brass</span>
+                        <span class="spec-tag">Kroll</span>
+                        <span class="spec-tag">Akvafitnes</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>510+</strong> Mashg'ulot</div>
+                        <div><strong>97%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Timur Usmanov bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Timur Usmanov bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 5 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Madina Umarova">
                     </div>
-                    <span class="badge">7 yil tajriba</span>
+                    <div class="rating">★ 5.0 <span>(310+ shogirdlar)</span></div>
                     <h2>Madina Umarova</h2>
-                    <p>Kardiyo, yog' yo'qotish (Fat Burn) va funksional mashqlar bo'yicha shaxsiy murabbiy.</p>
+                    <span class="badge">7 yil tajriba</span>
+                    <p>Intensiv kardiyo, yog' yo'qotish (Fat Burn) hamda vazn yo'qotish bo'yicha shaxsiy murabbiy.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Fat Burn</span>
+                        <span class="spec-tag">HIIT</span>
+                        <span class="spec-tag">Tabata</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>720+</strong> Mashg'ulot</div>
+                        <div><strong>99%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Madina Umarova bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Madina Umarova bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 6 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80" alt="Sardor Tursunov">
                     </div>
-                    <span class="badge">11 yil tajriba</span>
+                    <div class="rating">★ 4.9 <span>(180+ shogirdlar)</span></div>
                     <h2>Sardor Tursunov</h2>
-                    <p>Professional sportchilar uchun reabilitatsiya va jismoniy tiklanish mutaxassisi.</p>
+                    <span class="badge">11 yil tajriba</span>
+                    <p>Sportchilar uchun reabilitatsiya, umurtqa pog'onasini tiklash va jismoniy davolash mutaxassisi.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Reabilitatsiya</span>
+                        <span class="spec-tag">Kineziterapiya</span>
+                        <span class="spec-tag">Postura</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>890+</strong> Mashg'ulot</div>
+                        <div><strong>100%</strong> Tiklanish</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Sardor Tursunov bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Sardor Tursunov bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 7 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Zuxra Nazarova">
                     </div>
-                    <span class="badge">5 yil tajriba</span>
+                    <div class="rating">★ 4.8 <span>(140+ shogirdlar)</span></div>
                     <h2>Zuxra Nazarova</h2>
-                    <p>Pilates va qomatni to'g'ri saqlash (postura) bo'yicha sertifikatlangan murabbiy.</p>
+                    <span class="badge">5 yil tajriba</span>
+                    <p>Pilates va qomatni to'g'ri, go'zal saqlash bo'yicha xalqaro toifadagi malakali trener.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Pilates</span>
+                        <span class="spec-tag">Korse mushaklari</span>
+                        <span class="spec-tag">Balans</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>310+</strong> Mashg'ulot</div>
+                        <div><strong>96%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Zuxra Nazarova bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Zuxra Nazarova bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 8 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" alt="Rustam Hakimov">
                     </div>
-                    <span class="badge">12 yil tajriba</span>
+                    <div class="rating">★ 5.0 <span>(250+ shogirdlar)</span></div>
                     <h2>Rustam Hakimov</h2>
-                    <p>Krossfit va ekstremal chidamlilik mashg'ulotlari bo'yicha bosh murabbiy.</p>
+                    <span class="badge">12 yil tajriba</span>
+                    <p>Krossfit, ekstremal chidamlilik va funksional kuch ishlatish mashqlari bo'yicha bosh murabbiy.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">CrossFit</span>
+                        <span class="spec-tag">Powerlifting</span>
+                        <span class="spec-tag">Chidamlilik</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>950+</strong> Mashg'ulot</div>
+                        <div><strong>99%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Rustam Hakimov bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Rustam Hakimov bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 9 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Nodira Aliyeva">
                     </div>
-                    <span class="badge">6 yil tajriba</span>
+                    <div class="rating">★ 4.9 <span>(400+ shogirdlar)</span></div>
                     <h2>Nodira Aliyeva</h2>
-                    <p>Sog'lom ovqatlanish, dietologiya va sportchilarga ratsuz tuzish bo'yicha mutaxassis.</p>
+                    <span class="badge">6 yil tajriba</span>
+                    <p>Sog'lom ovqatlanish, dietologiya hamda shaxsiy individual ratsion tuzish eksperti.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Dietologiya</span>
+                        <span class="spec-tag">Parchat tuzish</span>
+                        <span class="spec-tag">Metabolizm</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>600+</strong> Dastur</div>
+                        <div><strong>98%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Nodira Aliyeva bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Nodira Aliyeva bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 10 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="Bobur Sharipov">
                     </div>
-                    <span class="badge">10 yil tajriba</span>
+                    <div class="rating">★ 4.8 <span>(110+ shogirdlar)</span></div>
                     <h2>Bobur Sharipov</h2>
-                    <p>Boks va o'zini himoya qilish asoslari hamda kardiyo-boks bo'yicha ustoz.</p>
+                    <span class="badge">10 yil tajriba</span>
+                    <p>Boks, o'zini himoya qilish va reaksiya hamda tezlikni oshiruvchi kardiyo-boks bo'yicha ustoz.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Boks</span>
+                        <span class="spec-tag">Kardiyo-Boks</span>
+                        <span class="spec-tag">Reaksiya</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>420+</strong> Mashg'ulot</div>
+                        <div><strong>97%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Bobur Sharipov bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Bobur Sharipov bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 11 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=300&q=80" alt="Dilnoza Qosimova">
                     </div>
-                    <span class="badge">7 yil tajriba</span>
+                    <div class="rating">★ 4.9 <span>(220+ shogirdlar)</span></div>
                     <h2>Dilnoza Qosimova</h2>
-                    <p>Aerobika, zumba va ritmik raqs fitness dasturlari bo'yicha energiyaga boy murabbiy.</p>
+                    <span class="badge">7 yil tajriba</span>
+                    <p>Aerobika, zumba va energiya bag'ishlovchi ritmik raqs fitness dasturlari bo me'mori.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Zumba</span>
+                        <span class="spec-tag">Aerobika</span>
+                        <span class="spec-tag">Ritm-Fit</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>530+</strong> Mashg'ulot</div>
+                        <div><strong>100%</strong> Energiya</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Dilnoza Qosimova bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Dilnoza Qosimova bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
 
             <!-- 12 -->
             <div class="card trainer-card">
                 <div>
                     <div class="trainer-img-box">
-                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=300&q=80" alt="Trener">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=300&q=80" alt="Shahzod Qodirov">
                     </div>
-                    <span class="badge">8 yil tajriba</span>
+                    <div class="rating">★ 4.9 <span>(170+ shogirdlar)</span></div>
                     <h2>Shahzod Qodirov</h2>
-                    <p>Velosport va ochiq havoda faol harakatlanish hamda turizm yo'nalishi ustozi.</p>
+                    <span class="badge">8 yil tajriba</span>
+                    <p>Velosport, ochiq havodagi krosslar hamda turizm mashg'ulotlari bo'yicha mas'ul murabbiy.</p>
+
+                    <div class="specialties">
+                        <span class="spec-tag">Velosport</span>
+                        <span class="spec-tag">Eco-Fit</span>
+                        <span class="spec-tag">Kross</span>
+                    </div>
+
+                    <div class="trainer-stats">
+                        <div><strong>390+</strong> Mashg'ulot</div>
+                        <div><strong>98%</strong> Natija</div>
+                    </div>
                 </div>
-                <button class="btn" style="margin-top: 20px;" onclick="alert('Shahzod Qodirov bilan bog\'lanish so\'rovi yuborildi!')">Bog'lanish</button>
+                <button class="btn-connect" onclick="alert('Shahzod Qodirov bilan shaxsiy mashg\'ulot uchun so\'rov yuborildi!')">Mashg'ulotga yozilish</button>
             </div>
         </div>
     </main>
