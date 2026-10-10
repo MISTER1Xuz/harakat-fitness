@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harakat - Barcha Kurslar va Dasturlar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filter-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .filter-btn {
+            background: #ffffff;
+            border: 1px solid #CBD5E0;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #4A5568;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #635BFF;
+            color: #ffffff;
+            border-color: #635BFF;
+            box-shadow: 0 4px 15px rgba(99, 91, 255, 0.25);
+        }
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #718096;
+            margin: 15px 0;
+            padding-top: 15px;
+            border-top: 1px dashed #E2E8F0;
+        }
+        .course-features {
+            list-style: none;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #4A5568;
+        }
+        .course-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.href='index.html'">⚡ Harakat</div>
+        <nav>
+            <a href="index.html">Asosiy</a>
+            <a href="courses.html" class="active">Kurslar</a>
+            <a href="trainers.html">Trenerlar</a>
+            <a href="about.html">Biz haqimizda</a>
+            <a href="contact.html">Aloqa</a>
+        </nav>
+    </header>
+
+    <main class="animate-fade">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 42px; margin-bottom: 12px;">Interaktiv Fitness va Sog'lomlashtirish Kurslari</h1>
+            <p style="color: #718096; font-size: 18px; max-width: 700px; margin: 0 auto;">Har bir daraja va maqsad uchun moslashtirilgan 9 ta intensiv video dasturlar va mashg'ulotlar to'plami.</p>
+        </div>
+
+        <!-- Filtrlar -->
+        <div class="filter-container">
+            <button class="filter-btn active">Barchasi (9)</button>
+            <button class="filter-btn">Yugurish & Kardiyo</button>
+            <button class="filter-btn">Fitness & Kuch</button>
+            <button class="filter-btn">Yoga & Reabilitatsiya</button>
+            <button class="filter-btn">Ovqatlanish</button>
+        </div>
+
+        <div class="grid">
+            <!-- Kurs 1 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Yugurish · O'rta daraja</span>
+                    <h2>Tong yengil yugurish (30 kun)</h2>
+                    <p>Nafas olish texnikasi, to'g'ri qadam va chidamlilikni oshirish bo'yicha bosqichma-bosqich qo'llanma.</p>
+                    <ul class="course-features">
+                        <li>✅ 30 ta kundalik video darslik</li>
+                        <li>✅ Yurak urishini nazorat qilish</li>
+                        <li>✅ Shaxsiy yugurish jadvali</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 30 daq/kun</span>
+                        <span>👤 Aziza Karimova</span>
+                        <span>★ 4.9 (340+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 2 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Fitness · Boshlang'ich</span>
+                    <h2>Uy sharoitida badantarbiya</h2>
+                    <p>Hech qanday anjomlarsiz uyda bajariladigan, tana tonusini va tetiklikni oshiruvchi mashqlar.</p>
+                    <ul class="course-features">
+                        <li>✅ 15 daqiqalik tezkor darslar</li>
+                        <li>✅ Umurtqa va bel salomatligi</li>
+                        <li>✅ Ertalabki energiya darslari</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 15 daq/kun</span>
+                        <span>👤 Malika Saidova</span>
+                        <span>★ 5.0 (520+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 3 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Suzish · Yuqori daraja</span>
+                    <h2>Professional suzish texnikasi</h2>
+                    <p>Suvda to'g'ri nafas olish, tezlikni oshirish hamda turli usullarda (brass, kroll) suzish sirlari.</p>
+                    <ul class="course-features">
+                        <li>✅ Suv osti videodarslari</li>
+                        <li>✅ Energiya tejash texnikalari</li>
+                        <li>✅ Muskullarni zo'riqishdan himoyalash</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 45 daq/kun</span>
+                        <span>👤 Timur Usmanov</span>
+                        <span>★ 4.8 (190+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 4 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Kardiyo · Yuqori intensivlik</span>
+                    <h2>Fat Burn / Yog' Yo'qotish</h2>
+                    <p>Ortiqcha vazndan xalos bo'lish va metabolizmni maksimal darajada tezlashtirish kardiyo darslari.</p>
+                    <ul class="course-features">
+                        <li>✅ HIIT va Tabata mashqlari</li>
+                        <li>✅ Kaloriya yoqish kalkulyatori</li>
+                        <li>✅ Motivatsion qo'llab-quvvatlash</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 35 daq/kun</span>
+                        <span>👤 Madina Umarova</span>
+                        <span>★ 5.0 (810+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 5 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Yoga · Barcha uchun</span>
+                    <h2>Tinchlik va Moslashuvchanlik</h2>
+                    <p>Stressni kamaytirish, mushaklarni cho'zish hamda ruhiy va jismoniy muvozanatga erishish.</p>
+                    <ul class="course-features">
+                        <li>✅ Nafas mashqlari va meditatsiya</li>
+                        <li>✅ Bo'g'imlar egiluvchanligi</li>
+                        <li>✅ Kechki tinchlantiruvchi yoga</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 25 daq/kun</span>
+                        <span>👤 Malika Saidova</span>
+                        <span>★ 4.9 (430+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 6 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Ovqatlanish · Salomatlik</span>
+                    <h2>Sog'lom ovqatlanish va Ratsion</h2>
+                    <p>To'g'ri kaloriya hisoblash, kunlik menyular tuzish hamda metabolizmni tezlashtirish qo'llanmasi.</p>
+                    <ul class="course-features">
+                        <li>✅ 50+ tayyor va foydali retseptlar</li>
+                        <li>✅ BJU (Oqsil, Yog', Uglevod) taqsimoti</li>
+                        <li>✅ Suv balansini saqlash usullari</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ Doimiy qo'llanma</span>
+                        <span>👤 Nodira Aliyeva</span>
+                        <span>★ 4.9 (670+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Ratsion qo\'llanmasi yuklab olindi!')">Qo'llanmani olish</button>
+                </div>
+            </div>
+
+            <!-- Kurs 7 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Power · Yuqori kuch</span>
+                    <h2>CrossFit va Kuch Mashqlari</h2>
+                    <p>Butun tana kuchini oshirish, mushaklar hajmini ko'paytirish va ekstremal chidamlilik dasturi.</p>
+                    <ul class="course-features">
+                        <li>✅ Og'ir va engil toshlar bilan mashqlar</li>
+                        <li>✅ Jarohatlarsiz ishlash qoidalari</li>
+                        <li>✅ Haftalik quvvat tahlili</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 50 daq/kun</span>
+                        <span>👤 Rustam Hakimov</span>
+                        <span>★ 5.0 (290+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 8 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Salomatlik · Davolash</span>
+                    <h2>Umurtqa va Postura Tiklash</h2>
+                    <p>O'tirib ishlash natijasida paydo bo'ladigan bo'yin va bel og'riqlaridan xalos bo'lish kompleksi.</p>
+                    <ul class="course-features">
+                        <li>✅ Qomatni tekislash mashqlari</li>
+                        <li>✅ Bel mushaklarini mustahkamlash</li>
+                        <li>✅ Ofis uchun mini-mashqlar</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 20 daq/kun</span>
+                        <span>👤 Sardor Tursunov</span>
+                        <span>★ 4.9 (480+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+
+            <!-- Kurs 9 -->
+            <div class="card">
+                <div>
+                    <span class="badge">Ritm · Energiya</span>
+                    <h2>Zumba va Ritmik Fitness</h2>
+                    <p>Raqs harakatlari orqali kaloriyalarni tez va maroqli yoqish hamda kayfiyatni ko'tarish dasturi.</p>
+                    <ul class="course-features">
+                        <li>✅ Sho'x musiqalar ostida darslar</li>
+                        <li>✅ Koordinatsiyani rivojlantirish</li>
+                        <li>✅ Barcha yoshdagilar uchun mos</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="course-meta">
+                        <span>⏱ 30 daq/kun</span>
+                        <span>👤 Dilnoza Qosimova</span>
+                        <span>★ 5.0 (390+)</span>
+                    </div>
+                    <button class="btn" onclick="alert('Kursga muvaffaqiyatli a\'zo bo\'ldingiz!')">Kursni boshlash (Bepul)</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>⚡ Harakat</h3>
+                <p>O'zbekistonda sog'lom turmush tarzini targ'ib qiluvchi yetakchi raqamli platforma.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Tezkor havolalar</h3>
+                <p><a href="index.html">Asosiy sahifa</a></p>
+                <p><a href="courses.html">Barcha kurslar</a></p>
+                <p><a href="trainers.html">Trenerlar jamoasi</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Aloqa markazi</h3>
+                <p>📧 support@harakat.uz</p>
+                <p>📞 +998 (71) 123-45-67</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Harakat Platformasi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+</body>
+</html>

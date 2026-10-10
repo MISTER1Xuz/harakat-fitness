@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harakat - Markaziy Aloqa va FAQ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-item {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 15px;
+            border: 1px solid #E2E8F0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #635BFF;
+            box-shadow: 0 5px 15px rgba(99, 91, 255, 0.08);
+        }
+        .faq-question {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0A1128;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            margin-top: 12px;
+            color: #4A5568;
+            line-height: 1.6;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.href='index.html'">⚡ Harakat</div>
+        <nav>
+            <a href="index.html">Asosiy</a>
+            <a href="courses.html">Kurslar</a>
+            <a href="trainers.html">Trenerlar</a>
+            <a href="about.html">Biz haqimizda</a>
+            <a href="contact.html" class="active">Aloqa</a>
+        </nav>
+    </header>
+
+    <main class="animate-fade">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h1 style="font-size: 42px; margin-bottom: 12px;">Biz Bilan Bog'laning</h1>
+            <p style="color: #718096; font-size: 18px;">Savollaringiz bormi? Qo'llab-quvvatlash jamoamiz haftada 7 kun xizmatda!</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 35px;">
+            <!-- Aloqa Kartochkasi -->
+            <div class="card">
+                <div>
+                    <span class="badge">Markaziy Ofis</span>
+                    <h2>Bog'lanish Ma'lumotlari</h2>
+                    <p style="margin-top: 15px;"><b>📍 Manzil:</b> Toshkent shahri, Amir Temur shoh ko'chasi, 15-uy (IT Park binosi)</p>
+                    <p><b>📞 Telefon:</b> +998 (71) 123-45-67</p>
+                    <p><b>📱 Telegram Bot:</b> @HarakatOfficial_bot</p>
+                    <p><b>📧 Email:</b> support@harakat.uz</p>
+                    <p><b>⏰ Ish rejimi:</b> Har kuni 08:00 dan 22:00 gacha</p>
+                </div>
+            </div>
+
+            <!-- Xabar Yuborish Formasi -->
+            <div class="card">
+                <h2>Tezkor Xabar Yuborish</h2>
+                <form onsubmit="event.preventDefault(); alert('Xabaringiz qabul qilindi! Operatormiz 15 daqiqa ichida siz bilan bog\'lanadi.'); this.reset();" style="margin-top: 15px;">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" placeholder="To'liq ismingiz" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #CBD5E0; font-size: 15px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="tel" placeholder="Telefon raqamingiz (+998)" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #CBD5E0; font-size: 15px;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <textarea placeholder="Savolingiz yoki taklifingiz..." rows="4" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #CBD5E0; font-size: 15px; resize: none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Xabarni Yuborish</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ (Ko'p Beriladigan Savollar) -->
+        <div style="margin-top: 60px;">
+            <h2 style="text-align: center; margin-bottom: 30px;">❓ Ko'p Beriladigan Savollar (FAQ)</h2>
+            
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>1. Platformadagi kurslar rostdan ham bepulmi?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Ha, barcha asosiy video darsliklar va mashqlar to'plamlari foydalanuvchilar uchun mutlaqo bepul taqdim etiladi.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>2. Trenerlar bilan shaxsiy shug'ullanish tartibi qanday?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Trenerlar sahifasidagi "Mashg'ulotga yozilish" tugmasi orqali ariza qoldirasiz va murabbiy siz bilan shaxsiy jadval tuzish uchun bog'lanadi.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>3. Uyda shug'ullanish uchun maxsus anjomlar kerakmi?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yo'q, ko'pchilik kurslarimiz maxsus anjomlarsiz, faqat o'z tana vazningiz yordamida bajarishga mo'ljallangan.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>⚡ Harakat</h3>
+                <p>O'zbekistonda sog'lom turmush tarzini targ'ib qiluvchi yetakchi raqamli platforma.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Tezkor havolalar</h3>
+                <p><a href="index.html">Asosiy sahifa</a></p>
+                <p><a href="courses.html">Barcha kurslar</a></p>
+                <p><a href="trainers.html">Trenerlar jamoasi</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Aloqa markazi</h3>
+                <p>📧 support@harakat.uz</p>
+                <p>📞 +998 (71) 123-45-67</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Harakat Platformasi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+</body>
+</html>

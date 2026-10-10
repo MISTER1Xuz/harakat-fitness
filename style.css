@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Mayin skroll */
+}
+
+body {
+    background-color: #F4F7FE;
+    color: #0A1128;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Header & Navigatsiya Animatsiyasi */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #635BFF;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+nav a {
+    text-decoration: none;
+    color: #4A5568;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover, nav a.active {
+    color: #635BFF;
+    background: #EEF0FF;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(99, 91, 255, 0.15);
+}
+
+/* Main Content & Scroll Animations */
+main {
+    flex: 1;
+    padding: 60px 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Animatsiya klasslari */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(99, 91, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(99, 91, 255, 0); }
+}
+
+.animate-fade {
+    animation: fadeInUp 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Grids & Kartochka Animatsiyalari */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 35px 30px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 22px 45px rgba(99, 91, 255, 0.12);
+    border-color: #635BFF;
+}
+
+.badge {
+    display: inline-block;
+    background: #EEF0FF;
+    color: #635BFF;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.card:hover .badge {
+    background: #635BFF;
+    color: #ffffff;
+}
+
+/* Interaktiv Tugmalar */
+.btn {
+    width: 100%;
+    background: #FFC837;
+    color: #0A1128;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 200, 55, 0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #635BFF;
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(99, 91, 255, 0.3);
+}
+
+/* Banner Animatsiyasi */
+.hero-banner {
+    flex: 1;
+    min-width: 320px;
+    background: linear-gradient(135deg, #635BFF, #8B82FF);
+    color: white;
+    padding: 50px;
+    border-radius: 35px;
+    box-shadow: 0 20px 40px rgba(99, 91, 255, 0.3);
+    transition: transform 0.4s ease;
+    animation: pulseGlow 3s infinite;
+}
+
+.hero-banner:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+/* Footer */
+footer {
+    background: #0A1128;
+    color: #ffffff;
+    padding: 60px 50px 30px 50px;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 { font-size: 20px; margin-bottom: 20px; color: #FFC837; }
+.footer-col p, .footer-col a { color: #A0AEC0; font-size: 15px; text-decoration: none; display: block; margin-bottom: 10px; transition: all 0.2s; }
+.footer-col a:hover { color: #ffffff; transform: translateX(5px); }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; color: #718096; font-size: 14px; }

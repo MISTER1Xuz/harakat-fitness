@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harakat - Biz Haqimizda va Kalkulyator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calc-box {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+            margin: 40px 0;
+            border: 1px solid #E2E8F0;
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .calc-input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #CBD5E0;
+            font-size: 15px;
+        }
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 20px;
+            border-left: 4px solid #635BFF;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #FFC837;
+            border: 4px solid #635BFF;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.href='index.html'">⚡ Harakat</div>
+        <nav>
+            <a href="index.html">Asosiy</a>
+            <a href="courses.html">Kurslar</a>
+            <a href="trainers.html">Trenerlar</a>
+            <a href="about.html" class="active">Biz haqimizda</a>
+            <a href="contact.html">Aloqa</a>
+        </nav>
+    </header>
+
+    <main class="animate-fade">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h1 style="font-size: 42px; margin-bottom: 12px;">"Harakat" Ekosistemasi Haqida</h1>
+            <p style="color: #718096; font-size: 18px; max-width: 800px; margin: 0 auto;">Biz har bir inson uchun sportni oson, hammabop va qiziqarli raqamli odatga aylantirish uchun ishlaymiz.</p>
+        </div>
+
+        <!-- Interaktiv BMI Kalkulyator -->
+        <div class="calc-box">
+            <h2 style="color: #635BFF; margin-bottom: 10px;">🧮 Interaktiv Tana Massasi (BMI) Kalkulyatori</h2>
+            <p>O'zingizning bo'yingiz va vazningizni kiriting hamda optimal salomatlik ko'rsatkichingizni aniqlang:</p>
+            <div class="calc-grid">
+                <div>
+                    <label style="font-weight: 600; display: block; margin-bottom: 8px;">Bo'yingiz (sm):</label>
+                    <input type="number" id="height" placeholder="Masalan: 175" class="calc-input">
+                </div>
+                <div>
+                    <label style="font-weight: 600; display: block; margin-bottom: 8px;">Vazningiz (kg):</label>
+                    <input type="number" id="weight" placeholder="Masalan: 70" class="calc-input">
+                </div>
+                <div style="display: flex; align-items: flex-end;">
+                    <button class="btn" onclick="calculateBMI()">Hisoblash</button>
+                </div>
+            </div>
+            <div id="bmi-result" style="margin-top: 20px; font-weight: bold; font-size: 18px; color: #0A1128;"></div>
+        </div>
+
+        <!-- Rivojlanish Bosqichlari (Timeline) -->
+        <div style="margin: 60px 0;">
+            <h2>🚀 Bizning Rivojlanish Yo'limiz</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 style="color: #635BFF;">2024-Yil — G'oyaning tug'ilishi</h3>
+                    <p>Yoshlar o'rtasida harakatsizlik va salomatlik muammolariga yechim sifatida "Harakat" loyihasi konsepsiyasi yaratildi.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: #635BFF;">2025-Yil — Birinchi Beta Versiya</h3>
+                    <p>10 nafar professional trener va 500 nafar ilk foydalanuvchilar bilan bepul video darsliklar platformasi ishga tushirildi.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: #635BFF;">2026-Yil — Milliy Ekosistema</h3>
+                    <p>Bugungi kunda platformada 15,000 dan ortiq faol foydalanuvchilar va 12 nafar xalqaro darajadagi murabbiylar birlashgan.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asosiy Tamoyillar -->
+        <div class="grid">
+            <div class="card">
+                <span class="badge">Missiyamiz</span>
+                <h2>100% Hammaboplik</h2>
+                <p>Sport har bir xonadonga kirib borishi kerak. Barcha asosiy darslarimiz mutlaqo bepul va barcha qurilmalarda ishlaydi.</p>
+            </div>
+            <div class="card">
+                <span class="badge">Vizyonimiz</span>
+                <h2>Sog'lom Kelajak</h2>
+                <p>Aholining jismoniy faolligini oshirish orqali salomatlik ko'rsatkichlarini ijobiy tomonga o'zgartirish.</p>
+            </div>
+            <div class="card">
+                <span class="badge">Jamiyat</span>
+                <h2>O'zaro Qo'llab-quvvatlash</h2>
+                <p>Biz faqat dars berib qolmay, bir-birini ruhlantiruvchi va natijalarga undovchi katta hamjamiyatni shakllantiramiz.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>⚡ Harakat</h3>
+                <p>O'zbekistonda sog'lom turmush tarzini targ'ib qiluvchi yetakchi raqamli platforma.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Tezkor havolalar</h3>
+                <p><a href="index.html">Asosiy sahifa</a></p>
+                <p><a href="courses.html">Barcha kurslar</a></p>
+                <p><a href="trainers.html">Trenerlar jamoasi</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Aloqa markazi</h3>
+                <p>📧 support@harakat.uz</p>
+                <p>📞 +998 (71) 123-45-67</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Harakat Platformasi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const h = document.getElementById('height').value / 100;
+            const w = document.getElementById('weight').value;
+            if(h > 0 && w > 0) {
+                const bmi = (w / (h * h)).toFixed(1);
+                let text = "";
+                if(bmi < 18.5) text = " (Vazn yetarsiz - Ko'proq oqsil va ovqatlanishga e'tibor bering)";
+                else if(bmi < 24.9) text = " (Me'yorda - Ajoyib natija! Shunday davom eting)";
+                else if(bmi < 29.9) text = " (Ortiqcha vazn - Kardiyo kurslarimizni tavsiya etamiz)";
+                else text = " (Yuqori vazn - Murabbiylarimiz bilan shaxsiy mashq boshlang)";
+                
+                document.getElementById('bmi-result').innerHTML = "Sizning BMI ko'rsatkichingiz: <span style='color:#635BFF'>" + bmi + "</span>" + text;
+            } else {
+                alert("Iltimos, bo'y va vazningizni to'g'ri kiriting!");
+            }
+        }
+    </script>
+</body>
+</html>
